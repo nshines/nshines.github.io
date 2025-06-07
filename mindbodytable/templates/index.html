@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post" action="/">
+    <label>검색할 건강 키워드:</label>
+    <input type="text" name="keyword" value="{{ keyword or '' }}" style="width:300px;" required>
+    <button type="submit">검색</button>
+</form>
+{% endblock %}

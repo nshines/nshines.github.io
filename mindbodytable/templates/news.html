@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="get" action="/news">
+    <label>뉴스 키워드:</label>
+    <input type="text" name="keyword" value="{{ keyword or '' }}" style="width:300px;" required>
+    <button type="submit">검색</button>
+</form>
+{% if keyword %}
+    <h2>'{{ keyword }}' 뉴스 검색 결과</h2>
+    <div>총 {{ total_count }}개</div>
+    <table border="1" cellpadding="6" style="width:100%;">
+        <tr><th>번호</th><th>제목</th><th>요약</th><th>날짜</th></tr>
+        {% for item in news_items %}
+            <tr>
+                <td>{{ item.no }}</td>
+                <td><a href="{{ item.link }}" target="_blank">{{ item.title|safe }}</a></td>
+                <td>{{ item.desc|safe }}</td>
+                <td>{{ item.date }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <div>
+        {% for i in range(1, total_pages+1) %}
+            <a href="/news?keyword={{ keyword }}&page={{ i }}">{{ i }}</a>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}
