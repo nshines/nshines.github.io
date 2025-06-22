@@ -1,8 +1,0 @@
-body { font-family: 'Malgun Gothic', Arial, sans-serif; background: #f8f9fa; }
-.container { max-width: 900px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 12px; }
-.flex { display: flex; }
-.sidebox { min-width: 180px; margin-left: 32px; display: flex; flex-direction: column; gap: 12px;}
-table { width: 100%; border-collapse: collapse; }
-th, td { border: 1px solid #ccc; padding: 8px; }
-input[type=text], textarea { width: 95%; }
-.post-box { margin-top: 32px; background: #f1f1f1; padding: 18px; border-radius: 8px;}
